@@ -10,7 +10,8 @@ Rails.application.routes.draw do
   end
   devise_for :users
   devise_for :admins
-  get 'welcome/index'
  
-  root to: 'welcome#index'
+  get 'home', to: 'site/welcome#index'
+
+  root to: 'site/welcome#index'
 end
