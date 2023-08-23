@@ -7,9 +7,10 @@ Rails.application.routes.draw do
   end
   namespace :admins_backoffice do
     get 'welcome/index'
+    resources :admins   # Administradores
   end
   devise_for :users
-  devise_for :admins
+  devise_for :admins, skip:  [:registrations]
  
   get 'home', to: 'site/welcome#index'
 
